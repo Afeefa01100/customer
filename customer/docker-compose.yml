@@ -1,0 +1,28 @@
+services:
+  # Spring Boot application
+  customer-app:
+    image: customer  # You can choose a name for your app image
+    build:
+      context: .  # Build from the current directory (assuming Dockerfile is present)
+    ports:
+      - "3322:3322"  # Expose Spring Boot app on port 3322
+    volumes:
+      - ./target:/customer  # Mount the target folder with your JAR file
+    command: java -jar /app/customer.jar
+    networks:
+      - app-network
+  
+  h2db:
+    image: oscarfonts/h2
+    container_name: h2db
+    ports:
+      - "3321:3322"  # H2 web console port
+    #command: java -jar /opt/h2/bin/h2-*.jar -web -webAllowOthers -tcp -tcpAllowOthers -webPort 8082
+    volumes:
+      - h2-data:/opt/h2-data  # Persist H2 data if required (optional)
+    networks:
+      - app-network
+
+networks:
+  app-network:  # Docker network for communication between containers
+    driver: bridge
