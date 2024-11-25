@@ -1,0 +1,89 @@
+Please check BusinessCustomer.postman_collection.json 
+PostMan Collections
+
+Endpoints Summary:
+
+GET http://localhost:3322/customers/welcome: A simple endpoint to confirm the API is up and running.
+
+GET http://localhost:3322/customers/{uuid}: Fetch a customer by their unique UUID.
+
+GET http://localhost:3322/customers: Retrieve a list of all customers.
+
+POST http://localhost:3322/customers/create: Create a new customer.
+
+PUT http://localhost:3322/customers/update: Update an existing customer.
+
+DELETE http://localhost:3322/customers/{uuid}: Delete a specific customer by UUID.
+
+DELETE http://localhost:3322/customers: Delete all customer records.
+
+
+GET /customers/welcome
+Summary: Provides a simple message to check if the service is running.
+Response:
+200 OK: Returns the welcome message.
+
+GET /customers/{uuid}
+Summary: Fetch a customer by their UUID.
+Parameters:
+uuid (path parameter): The UUID of the customer to fetch.
+Response:
+200 OK: Returns the customer details.
+404 Not Found: If the customer with the given UUID does not exist.
+
+GET /customers/
+Summary: Fetch all customers.
+Response:
+200 OK: Returns a list of all customers.
+
+POST /customers/create
+Summary: Create a new customer.
+Request Body: JSON object containing the customer data.
+Response:
+201 Created: Successfully created the customer.
+400 Bad Request: If the provided data is invalid (e.g., missing required fields).
+
+PUT /customers/update
+Summary: Update an existing customer.
+Request Body: JSON object containing the updated customer details.
+Response:
+200 OK: Customer updated successfully.
+404 Not Found: If the customer does not exist.
+
+DELETE /customers/{uuid}
+Summary: Delete a customer by their UUID.
+Parameters:
+uuid (path parameter): The UUID of the customer to delete.
+Response:
+200 OK: Customer deleted successfully.
+404 Not Found: If the customer with the given UUID does not exist.
+
+DELETE /customers/
+Summary: Delete all customers from the system.
+Response:
+200 OK: All customers have been deleted.
+
+
+We are using H2 Database which will be available at http://localhost:3322/h2-console
+
+Driver Class: org.h2.Driver
+
+JDBC URL: jdbc:h2:mem:Business
+
+User Name: sa
+
+Password:
+
+We are using schema for creating Customer table, but for safe side I am giving
+
+DROP TABLE IF EXISTS Customer;
+create table Customer(
+		 customer_Id UUID PRIMARY KEY,
+		customer_first_name VARCHAR(255),
+		customer_middle_name VARCHAR(255),
+		customer_last_name VARCHAR(255),
+		customer_email VARCHAR(255) UNIQUE,
+		customer_phone_number VARCHAR(255)
+		);
+
+Please install Docker at local desktop and run the docker-compose up

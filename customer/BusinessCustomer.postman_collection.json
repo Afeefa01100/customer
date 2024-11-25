@@ -1,0 +1,211 @@
+{
+	"info": {
+		"_postman_id": "fcef8a78-87c5-4681-b59f-995f2722a85f",
+		"name": "BusinessCustomer",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30347421",
+		"_collection_link": "https://warped-sunset-217651.postman.co/workspace/New-Team-Workspace~22c295c8-4321-48ee-84cf-5fadf554a6a7/collection/30347421-fcef8a78-87c5-4681-b59f-995f2722a85f?source=collection_link"
+	},
+	"item": [
+		{
+			"name": "Welcome",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3322/customers/welcome",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3322",
+					"path": [
+						"customers",
+						"welcome"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Customer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"customerFirstName\":\"Raju\",\n\t\"customerMiddleName\":\"Kumar\",\n\t\"customerLastName\":\"Sharma\",\n\t\"customerEmail\":\"rk.sharma7794@gmail.com\",\n\t\"customerPhoneNumber\":\"8210574728\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3322/customers/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3322",
+					"path": [
+						"customers",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "All Customers",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"customerFirstName\":\"Raju\",\n\t\"customerMiddleName\":\"Kumar\",\n\t\"customerLastName\":\"Sharma\",\n\t\"customerEmail\":\"rk.sharma7794@gmail.com\",\n\t\"customerPhoneNumber\":\"8210574728\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3322/customers/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3322",
+					"path": [
+						"customers",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Customer By Id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"customerFirstName\":\"Raju\",\n\t\"customerMiddleName\":\"Kumar\",\n\t\"customerLastName\":\"Sharma\",\n\t\"customerEmail\":\"rk.sharma7794@gmail.com\",\n\t\"customerPhoneNumber\":\"8210574728\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3322/customers/4a09a43b-bb34-414e-92b1-718bf6bb2279",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3322",
+					"path": [
+						"customers",
+						"4a09a43b-bb34-414e-92b1-718bf6bb2279"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Customer By Id",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"uuid\":\"4c52ebc6-0409-41a3-87e4-78bccd736eb3\",\n    \"customer\":{\n                \"customerFirstName\":\"Prem\",\n                \"customerMiddleName\":\"Kumar\",\n                \"customerLastName\":\"Yadav\",\n                \"customerEmail\":\"pk.sharma77@gmail.com\",\n                \"customerPhoneNumber\":\"9876543210\"\n                }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3322/customers/update",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3322",
+					"path": [
+						"customers",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete by Customer Id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"uuid\":\"480d7589-fa8c-447b-913c-212edb0ff36d\",\n    \"customer\":{\n                \"customerFirstName\":\"Raju\",\n                \"customerMiddleName\":\"Kumar\",\n                \"customerLastName\":\"Sharma\",\n                \"customerEmail\":\"rk.sharma7794@gmail.com\",\n                \"customerPhoneNumber\":\"8210574728\"\n                }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3322/customers/480d7589-fa8c-447b-913c-212edb0ff36d",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3322",
+					"path": [
+						"customers",
+						"480d7589-fa8c-447b-913c-212edb0ff36d"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete All Customer",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"uuid\":\"480d7589-fa8c-447b-913c-212edb0ff36d\",\n    \"customer\":{\n                \"customerFirstName\":\"Raju\",\n                \"customerMiddleName\":\"Kumar\",\n                \"customerLastName\":\"Sharma\",\n                \"customerEmail\":\"rk.sharma7794@gmail.com\",\n                \"customerPhoneNumber\":\"8210574728\"\n                }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3322/customers/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3322",
+					"path": [
+						"customers",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
