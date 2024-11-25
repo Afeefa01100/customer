@@ -86,4 +86,5 @@ create table Customer(
 		customer_phone_number VARCHAR(255)
 		);
 
-Please install Docker at local desktop and run the docker-compose up
+Please install Docker at local desktop and run the 
+docker-compose up
